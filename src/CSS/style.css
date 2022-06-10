@@ -9,6 +9,42 @@ nav.sidebar {
 }
 nav.sidebar span {
   margin-bottom: 4.5rem;
+  font-size: 3rem;
+  font-weight: 600;
+  color: var --yellow;
+}
+nav.sidebar p {
+  display: inline;
+  flex-direction: column;
+  width: 100%;
+}
+
+button {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 20rem;
+  width: 100%;
+  border: 0;
+  background: var(--background-button);
+  padding: 1.1875rem 2rem;
+  border-radius: 0.25rem;
+  font-size: 1.125rem;
+  color: var(--white);
+  transition: background 200ms;
+}
+button:hover {
+  background: var(--background-button2);
+}
+button + button {
+  margin-top: 1rem;
+}
+button:first-child {
+  margin-top: 0;
+}
+button.selected {
+  background: var(--background-button2);
+  color: var(--yellow);
 }
 
 :root {
