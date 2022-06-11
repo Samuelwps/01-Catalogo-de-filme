@@ -65,7 +65,6 @@ function App() {
     <div style={{ display: "flex", flexDirection: "row" }}>
       <nav className="sidebar">
         <span>Watch<p>Me</p></span>
-
         <div className="buttons-container">
           {genres.map(genre => (
               <Button     
@@ -77,7 +76,26 @@ function App() {
               />
             ))}
         </div>
-      </nav>
+      </nav>            
+                         
+      <div className="container">
+        <header>
+          <span className="category">Categoria:</span><span>{selectedGenre.title}</span>
+        </header>
+
+        <main>
+          <div className="movies-list">
+            {/* //estudar codigo */}
+            {movies.map(movie => (
+                <MovieCard key={movie.imdbID} title={movie.Title} 
+                poster={movie.Poster} runtime={movie.Runtime} rating={movie.Ratings[0].Value}/>        
+              ))}
+  
+          </div>
+        </main>
+
+      </div>
+
     </div>
     
   )
