@@ -35,9 +35,6 @@ function App() {
   const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
 
 
-  
-
-
   useEffect(() => {
     api.get<GenreResponseProps[]>("genres").then(response => {
       setGenres(response.data)
@@ -65,13 +62,12 @@ function App() {
   }
 
   return (
-    <div>
+    <div style={{ display: "flex", flexDirection: "row" }}>
       <nav className="sidebar">
         <span>Watch <p>Me</p></span>
 
         <div className="buttons-container">
-          {
-            genres.map(genre => {
+          {genres.map(genre => (
               <Button     
                 key={String(genre.id)}
                 title={genre.title}
@@ -79,8 +75,7 @@ function App() {
                 onClick={() => handleClickButton(genre.id)}
                 selected={selectedGenreId === genre.id}
               />
-            })
-          }
+            ))}
         </div>
       </nav>
     </div>
