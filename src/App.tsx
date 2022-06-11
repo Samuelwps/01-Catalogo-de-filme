@@ -64,7 +64,7 @@ function App() {
   return (
     <div style={{ display: "flex", flexDirection: "row" }}>
       <nav className="sidebar">
-        <span>Watch <p>Me</p></span>
+        <span>Watch<p>Me</p></span>
 
         <div className="buttons-container">
           {genres.map(genre => (

@@ -5,16 +5,21 @@ nav.sidebar {
   max-width: 24rem;
   width: 100%;
   padding: 2rem;
-  background: ver(--background2);
+  height: 100vh;
+  background: var(--background2);
 }
 nav.sidebar span {
   margin-bottom: 4.5rem;
   font-size: 3rem;
   font-weight: 600;
-  color: var --yellow;
+  color: var(--yellow);
 }
 nav.sidebar p {
   display: inline;
+  color: var(--white);
+}
+nav.sidebar .buttons-container {
+  display: flex;
   flex-direction: column;
   width: 100%;
 }
@@ -45,6 +50,81 @@ button:first-child {
 button.selected {
   background: var(--background-button2);
   color: var(--yellow);
+}
+
+.movie-card {
+  position: relative;
+}
+.movie-card img {
+  width: 14.31rem;
+  height: 21.25rem;
+}
+.movie-card > div {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  background: rgba(31, 34, 41, 0.5);
+}
+.movie-card > div .movie-info {
+  max-width: 12.31rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.movie-card > div .movie-info > span {
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fbfbfb;
+  margin-top: auto;
+  margin-bottom: 0.5rem;
+}
+.movie-card > div .movie-info .meta {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+.movie-card > div .movie-info .meta div {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  color: var(--gray);
+}
+.movie-card > div .movie-info .meta div svg {
+  color: #FAE800;
+  margin-right: 0.5rem;
+}
+
+.container {
+  max-width: 52.5rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+header span.category {
+  display: block;
+  margin-top: 2rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--gray);
+}
+header span {
+  color: var(--white);
+}
+
+main {
+  width: 100%;
+  margin-top: 5.625rem;
+}
+main .movies-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 4.75rem;
+  list-style: none;
 }
 
 :root {

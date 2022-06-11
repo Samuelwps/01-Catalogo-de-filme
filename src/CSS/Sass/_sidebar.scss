@@ -9,17 +9,25 @@ nav.sidebar{
 
   padding:2rem;
 
-  background: ver(--background2);
+    height: 100vh;
+
+
+  background: var(--background2);
 
   span{
     margin-bottom: 4.5rem;
     font-size: 3rem;
     font-weight: 600;
-    color: var (--yellow);
+    color: var(--yellow);
   }
 
   p{
     display:inline;
+    color: var(--white)
+  }
+
+  .buttons-container{
+    display:flex;
     flex-direction:column;
 
     width:100%;
