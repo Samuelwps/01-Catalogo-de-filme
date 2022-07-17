@@ -36,8 +36,6 @@ function Content({selectedGenreId, selectedGenre} :ContentProps ) {
   useEffect(() => {
     api.get<MovieProps[]>(`movies/?Genre_id=${selectedGenreId}`).then(response => {
       setMovies(response.data);
-      console.log("setMovies")
-      console.log(response.data)
     })
     }, [selectedGenreId])
 
@@ -49,7 +47,6 @@ function Content({selectedGenreId, selectedGenre} :ContentProps ) {
 
         <main>
           <div className="movies-list">
-            {/* //estudar codigo */}
             {movies.map(movie => (
                 <MovieCard key={movie.imdbID} title={movie.Title} 
                 poster={movie.Poster} runtime={movie.Runtime} rating={movie.Ratings[0].Value}/>        

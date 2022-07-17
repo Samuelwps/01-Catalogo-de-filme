@@ -1,14 +1,8 @@
 import { useEffect, useState } from "react"
-
-import { api } from "./services/api"
-
+import { api } from "./services/api"                           
 import  Button from "./components/Button"
-
-
-
 import SideBar from "./components/SideBar"
 import Content from "./components/Content"
-
 
 
 interface GenreResponseProps {
@@ -25,7 +19,6 @@ function App() {
   useEffect(() => {          
     api.get<GenreResponseProps>(`genres/${selectedGenreId}`).then(response => {
       setSelectedGenre(response.data);
-      console.log("setSelectedGenre")
       console.log(response.data)
     })
   }, [selectedGenreId]);

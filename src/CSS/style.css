@@ -1,33 +1,50 @@
 nav.sidebar {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   max-width: 24rem;
   width: 100%;
   padding: 2rem;
-  height: 100vh;
   background: var(--background2);
 }
-nav.sidebar span {
+nav.sidebar > span {
   margin-bottom: 4.5rem;
   font-size: 3rem;
   font-weight: 600;
   color: var(--yellow);
 }
-nav.sidebar p {
+nav.sidebar > span p {
   display: inline;
   color: var(--white);
 }
 nav.sidebar .buttons-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   width: 100%;
 }
 
 button {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   max-width: 20rem;
   width: 100%;
   border: 0;
@@ -36,6 +53,7 @@ button {
   border-radius: 0.25rem;
   font-size: 1.125rem;
   color: var(--white);
+  -webkit-transition: background 200ms;
   transition: background 200ms;
 }
 button:hover {
@@ -65,15 +83,24 @@ button.selected {
   bottom: 0;
   right: 0;
   left: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  justify-content: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   background: rgba(31, 34, 41, 0.5);
 }
 .movie-card > div .movie-info {
   max-width: 12.31rem;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 .movie-card > div .movie-info > span {
   font-weight: 600;
@@ -83,14 +110,25 @@ button.selected {
   margin-bottom: 0.5rem;
 }
 .movie-card > div .movie-info .meta {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   margin-bottom: 1rem;
 }
 .movie-card > div .movie-info .meta div {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  align-items: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   font-weight: 600;
   color: var(--gray);
 }
@@ -105,6 +143,18 @@ button.selected {
   margin: 0 auto;
 }
 
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+header span.spanGenre {
+  display: block;
+  margin-top: 2rem;
+  font-size: 2.25rem;
+  font-weight: 600;
+  color: var(--yellow);
+}
 header span.category {
   display: block;
   margin-top: 2rem;
@@ -121,7 +171,9 @@ main {
   margin-top: 5.625rem;
 }
 main .movies-list {
+  display: -ms-grid;
   display: grid;
+  -ms-grid-columns: 1fr 4.75rem 1fr 4.75rem 1fr;
   grid-template-columns: repeat(3, 1fr);
   grid-gap: 4.75rem;
   list-style: none;
@@ -140,7 +192,8 @@ main .movies-list {
 * {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -156,5 +209,4 @@ input, textarea {
 button {
   cursor: pointer;
 }
-
 /*# sourceMappingURL=style.css.map */
