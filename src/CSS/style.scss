@@ -11,6 +11,7 @@
   --background-button: #373945;
   --background-button2: #4B4D59;
   --yellow: #FAE800;
+  --gray-100:#707488;
   --gray: #BEC2C6;
   --white: #FBFBFB;
 }
@@ -25,6 +26,20 @@ body {
   font: 16px "Poppins", Arial, sans-serif;
   color: #FBFBFB;
   background: var(--background);
+
+  &::-webkit-scrollbar{
+    padding-right: 4px;
+    width: 0.3rem;
+    background: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;        /* color of the tracking area */
+  }
+  &::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+    background: var(--white);
+    border: 6px solid var(--gray-100);
+  }
 }
 
 input, textarea {
