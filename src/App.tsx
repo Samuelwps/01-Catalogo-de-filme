@@ -17,9 +17,15 @@ function App() {
   const [selectedGenre, setSelectedGenre] = useState<GenreResponseProps>({} as GenreResponseProps);
   
   useEffect(() => {          
-    api.get<GenreResponseProps>(`genres/${selectedGenreId}`).then(response => {
-      setSelectedGenre(response.data);
-      console.log(response.data)
+    api.get(`/genres`).then(response => {
+      const data = response.data
+      const filter = data.filter((item:any) => {
+        return item.id === selectedGenreId
+      })
+
+      const res = filter[0]
+
+      setSelectedGenre(res);
     })
   }, [selectedGenreId]);
     

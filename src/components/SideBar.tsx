@@ -19,7 +19,7 @@ function SideBar({selectedGenreId, handleClickButton} :SideBarProps) {
 
 
   useEffect(() => {
-    api.get<GenreResponseProps[]>("genres").then(response => {
+    api.get<GenreResponseProps[]>("/genres").then(response => {
       setGenres(response.data)
     })
     }, [])

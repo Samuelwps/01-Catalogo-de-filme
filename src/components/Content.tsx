@@ -3,6 +3,7 @@ import { useEffect, useState } from "react"
 import { api } from "../services/api"
 
 interface MovieProps{
+  Genre_id: number;
   imdbID: string;
   Title: string;
   Poster: string;
@@ -34,8 +35,13 @@ function Content({selectedGenreId, selectedGenre} :ContentProps ) {
 
 
   useEffect(() => {
-    api.get<MovieProps[]>(`movies/?Genre_id=${selectedGenreId}`).then(response => {
-      setMovies(response.data);
+    api.get<MovieProps[]>("/movies").then(response => {
+      const data = response.data
+      const filter = data.filter((item) => {
+        return item.Genre_id === selectedGenreId
+      })
+      
+      setMovies(filter);
     })
     }, [selectedGenreId])
 
